@@ -1,85 +1,105 @@
-// 语言切换功能
+// ============ Language Switch: EN / ZH / AR ============
 let currentLang = 'en';
 
-function toggleLang() {
-    currentLang = currentLang === 'en' ? 'zh' : 'en';
-    applyLang(currentLang);
-    updateLangBtn();
-    localStorage.setItem('siy-lang', currentLang);
+const LANG_OPTS = [
+    { code: 'en', label: 'EN' },
+    { code: 'zh', label: '中文' },
+    { code: 'ar', label: 'العربية' },
+];
+
+function initLangSwitcher() {
+    const sel = document.getElementById('lang-select');
+    if (!sel) return;
+    sel.innerHTML = '';
+    LANG_OPTS.forEach(opt => {
+        const o = document.createElement('option');
+        o.value = opt.code;
+        o.textContent = opt.label;
+        sel.appendChild(o);
+    });
+    sel.value = currentLang;
+    sel.addEventListener('change', (e) => {
+        currentLang = e.target.value;
+        applyLang(currentLang);
+        localStorage.setItem('siy-lang', currentLang);
+    });
 }
 
 function applyLang(lang) {
-    // 处理 data-en / data-zh (文本内容)
+    // Set lang & dir on html
+    document.documentElement.lang = lang === 'en' ? 'en' : lang === 'zh' ? 'zh-CN' : 'ar';
+    // Layout ALWAYS LTR — we only flip text direction via CSS class
+    document.documentElement.dir = 'ltr';
+    document.body.dir = 'ltr';
+
+    // Toggle body class for Arabic text direction (layout stays LTR)
+    if (lang === 'ar') {
+        document.body.classList.add('lang-ar');
+    } else {
+        document.body.classList.remove('lang-ar');
+    }
+
+    // data-en / data-zh / data-ar (textContent)
     document.querySelectorAll('[data-en]').forEach(el => {
-        if (lang === 'en') {
-            el.textContent = el.getAttribute('data-en');
-        } else {
-            const zh = el.getAttribute('data-zh');
-            if (zh) el.textContent = zh;
-        }
+        const text = el.getAttribute('data-' + lang);
+        if (text) el.textContent = text;
     });
-    
-    // 处理 data-en-html / data-zh-html (HTML内容)
+
+    // data-en-html / data-zh-html / data-ar-html (innerHTML)
     document.querySelectorAll('[data-en-html]').forEach(el => {
-        if (lang === 'en') {
-            el.innerHTML = el.getAttribute('data-en-html');
-        } else {
-            const zh = el.getAttribute('data-zh-html');
-            if (zh) el.innerHTML = zh;
-        }
+        const html = el.getAttribute('data-' + lang + '-html');
+        if (html) el.innerHTML = html;
     });
-    
-    // 处理 data-en-placeholder / data-zh-placeholder (input/textarea placeholder)
+
+    // data-en-placeholder / data-zh-placeholder / data-ar-placeholder
     document.querySelectorAll('[data-en-placeholder]').forEach(el => {
-        if (lang === 'en') {
-            el.placeholder = el.getAttribute('data-en-placeholder');
-        } else {
-            const zh = el.getAttribute('data-zh-placeholder');
-            if (zh) el.placeholder = zh;
-        }
+        const ph = el.getAttribute('data-' + lang + '-placeholder');
+        if (ph) el.placeholder = ph;
     });
-    
-    // 处理 select option 的 data-en / data-zh
+
+    // select option data-en / data-zh / data-ar
     document.querySelectorAll('select option[data-en]').forEach(opt => {
-        if (lang === 'en') {
-            opt.textContent = opt.getAttribute('data-en');
-        } else {
-            const zh = opt.getAttribute('data-zh');
-            if (zh) opt.textContent = zh;
-        }
+        const text = opt.getAttribute('data-' + lang);
+        if (text) opt.textContent = text;
     });
-    
-    document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+
+    // Update select value
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
 }
 
-function updateLangBtn() {
-    const btn = document.getElementById('lang-toggle');
-    if (btn) {
-        btn.textContent = currentLang === 'en' ? '中文' : 'EN';
-    }
-}
-
-// 页面加载时恢复语言偏好
-document.addEventListener('DOMContentLoaded', () => {
-    const saved = localStorage.getItem('siy-lang');
-    if (saved) {
-        currentLang = saved;
-        applyLang(currentLang);
-        updateLangBtn();
-    }
-});
-
-// Collection 页：加载更多作品
+// ============ Collection: Load More ============
 function loadMoreWorks() {
     document.querySelectorAll('.art-card-hidden').forEach(card => {
         card.classList.remove('art-card-hidden');
+        // 添加 visible 类使卡片立即显示（不带淡入动画）
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
     });
     const btn = document.getElementById('load-more-btn');
     if (btn) btn.style.display = 'none';
 }
 
-// Contact 表单：web3forms 提交处理
-document.addEventListener('DOMContentLoaded', () => {
+// ============ Scroll Fade-In ============
+function initScrollFade() {
+    const fadeTargets = document.querySelectorAll(
+        '.hero-right, .slogan-section, .heritage-section, .selected-works, .mission-section, .inquire-banner, .collection-header, .gallery-grid, .about-hero, .artisan-section, .craft-section, .contact-section'
+    );
+    fadeTargets.forEach(el => el.classList.add('fade-in'));
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+}
+
+// ============ Contact Form: web3forms ============
+function initContactForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
 
@@ -98,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(this.action, {
                 method: 'POST',
                 body: formData
-                // 不设置 Content-Type，让浏览器自动处理 multipart/form-data + boundary
             });
 
             const text = await response.text();
@@ -106,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 data = JSON.parse(text);
             } catch {
-                // 返回的不是 JSON，可能是成功页 HTML，视为提交成功
                 data = { success: true };
             }
 
@@ -118,14 +136,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             console.error('Form submit error:', error);
-            // 降级：fetch 失败（CORS/网络），改用原生提交跳转 web3forms 成功页
-            statusEl.innerHTML = '<p style="color:#888;font-size:13px;padding:8px 0;">Redirecting to submit...</p>';
-            // 移除 preventDefault 效果，原生提交
-            this.removeEventListener('submit', arguments.callee);
-            this.submit();
+            statusEl.innerHTML = '<p style="color:#B85C38;font-size:14px;padding:12px 0;background:rgba(184,92,56,0.08);border-radius:2px;">✗ Something went wrong. Please try again or email us directly.</p>';
         } finally {
             submitBtn.disabled = false;
             submitBtn.style.opacity = '1';
         }
     });
+}
+
+// ============ DOM Ready ============
+document.addEventListener('DOMContentLoaded', () => {
+    // Language
+    initLangSwitcher();
+    const saved = localStorage.getItem('siy-lang');
+    if (saved && LANG_OPTS.find(l => l.code === saved)) {
+        currentLang = saved;
+        applyLang(currentLang);
+    }
+
+    // Scroll fade
+    initScrollFade();
+
+    // Contact form
+    initContactForm();
 });

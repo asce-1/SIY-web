@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIY - Our Craft | 工艺世界</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:wght@400;500;600&family=Noto+Naskh+Arabic:wght@400;500&family=Noto+Sans+SC:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+
+    <!-- 全局导航 -->
+    <nav class="global-nav">
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="SIY" class="logo-img">
+            <span class="logo-text">SIY</span>
+        </a>
+        <div class="nav-menu">
+            <a href="index.html" data-en="Home" data-zh="首页" data-ar="الرئيسية">Home</a>
+            <a href="categories.html" class="nav-active" data-en="Our Craft" data-zh="工艺世界" data-ar="عالمنا الحرفي">Our Craft</a>
+            <a href="collection.html" data-en="Collection" data-zh="作品集" data-ar="المجموعة">Collection</a>
+            <a href="about.html" data-en="About" data-zh="关于" data-ar="من نحن">About</a>
+        </div>
+        <div class="nav-right">
+            <a href="contact.html" class="nav-cta" data-en="Contact" data-zh="联系" data-ar="اتصل بنا">Contact</a>
+            <select id="lang-select" class="lang-select"></select>
+        </div>
+    </nav>
+
+    <!-- 页面 Hero -->
+    <section class="categories-hero">
+        <div class="page-container">
+            <div class="section-label" data-en="What We Create" data-zh="我们的创作" data-ar="ما نبدعه">What We Create</div>
+            <h1 class="categories-hero-title" data-en-html="Four Worlds<br>of Suzhou<br>Embroidery" data-zh-html="苏州刺绣<br>四大世界" data-ar-html="أربعة عوالم<br>للتطريز<br>السوتشوي">Four Worlds<br>of Suzhou<br>Embroidery</h1>
+            <p class="categories-hero-desc" data-en="From museum-grade collector pieces to everyday elegant living — each SIY creation carries 2,500 years of Suzhou embroidery heritage into the modern world." data-zh="从博物馆级收藏品到日常雅致生活——每一件 SIY 作品都将2500年的苏州刺绣遗产带入现代世界。" data-ar="من قطع المقتنين بمستوى المتاحف إلى العيش الأنيق اليومي — كل إبداع SIY يحمل 2500 عام من تراث تطريز سوتشو إلى العالم الحديث.">From museum-grade collector pieces to everyday elegant living — each SIY creation carries 2,500 years of Suzhou embroidery heritage into the modern world.</p>
+        </div>
+    </section>
+
+    <!-- 分类 1：收藏艺术 -->
+    <section class="category-section cat-collector">
+        <div class="page-container">
+            <div class="category-grid">
+                <div class="category-image">
+                    <img src="collection2.jpg" alt="Collector Art - Suzhou Embroidery">
+                </div>
+                <div class="category-text">
+                    <div class="category-number">01</div>
+                    <h2 class="category-title" data-en="Collector's Art" data-zh="收藏艺术" data-ar="فن المقتنين">Collector's Art</h2>
+                    <p class="category-desc" data-en="Museum-grade embroidery artworks: hanging screens, double-sided masterpieces, and portrait embroidery that capture light and shadow with needle and silk. Each piece is a one-of-a-kind heirloom." data-zh="博物馆级刺绣艺术作品：挂屏、双面绣杰作，以及以针线捕捉光影的肖像绣。每件作品都是独一无二的传世之作。">Museum-grade embroidery artworks: hanging screens, double-sided masterpieces, and portrait embroidery that capture light and shadow with needle and silk. Each piece is a one-of-a-kind heirloom.</p>
+                    <div class="category-tags">
+                        <span class="tag" data-en="Hanging Screens" data-zh="挂屏" data-ar="شاشات معلقة">Hanging Screens</span>
+                        <span class="tag" data-en="Double-Sided Embroidery" data-zh="双面绣" data-ar="التطريز ذو الوجهين">Double-Sided Embroidery</span>
+                        <span class="tag" data-en="Portrait Embroidery" data-zh="肖像绣" data-ar="تطريز البورتريه">Portrait Embroidery</span>
+                    </div>
+                    <a href="collection.html" class="btn-outline" data-en="View Collection →" data-zh="浏览作品 →" data-ar="عرض المجموعة ←">View Collection →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 分类 2：时尚服饰 -->
+    <section class="category-section cat-fashion">
+        <div class="page-container">
+            <div class="category-grid reverse">
+                <div class="category-image">
+                    <img src="clothing.jpg" alt="Fashion & Wear - Suzhou Embroidery">
+                </div>
+                <div class="category-text">
+                    <div class="category-number">02</div>
+                    <h2 class="category-title" data-en="Fashion & Wear" data-zh="时尚服饰" data-ar="الأزياء والملبوسات">Fashion & Wear</h2>
+                    <p class="category-desc" data-en="Bespoke embroidered gowns, modern qipao, and everyday elegance — where Suzhou silk meets contemporary design. Each stitch tells a story of craftsmanship and style." data-zh="定制刺绣礼服、现代旗袍和日常雅致——苏州丝线遇见当代设计。每一针都讲述着工艺与风格的故事。">Bespoke embroidered gowns, modern qipao, and everyday elegance — where Suzhou silk meets contemporary design. Each stitch tells a story of craftsmanship and style.</p>
+                    <div class="category-tags">
+                        <span class="tag" data-en="Bespoke Gowns" data-zh="定制礼服" data-ar="فساتين مخصصة">Bespoke Gowns</span>
+                        <span class="tag" data-en="Modern Qipao" data-zh="现代旗袍" data-ar="تشيباو حديث">Modern Qipao</span>
+                        <span class="tag" data-en="Silk Accessories" data-zh="丝质配饰" data-ar="إكسسوارات الحرير">Silk Accessories</span>
+                    </div>
+                    <a href="contact.html" class="btn-outline" data-en="Inquire Now →" data-zh="立即咨询 →" data-ar="استفسر الآن ←">Inquire Now →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 分类 3：家居生活 -->
+    <section class="category-section cat-home">
+        <div class="page-container">
+            <div class="category-grid">
+                <div class="category-image">
+                    <img src="collection.jpg" alt="Home & Living - Suzhou Embroidery">
+                </div>
+                <div class="category-text">
+                    <div class="category-number">03</div>
+                    <h2 class="category-title" data-en="Home & Living" data-zh="家居生活" data-ar="المنزل والعيش">Home & Living</h2>
+                    <p class="category-desc" data-en="Embroidered cushions, tea ceremony sets, and silk lamps — bringing the elegance of Suzhou craft into every corner of your home. Where tradition lives in daily rituals." data-zh="刺绣抱枕、茶道套装和丝绸灯饰——将苏州工艺的优雅带入您家的每个角落。传统生活在日常仪式中。">Embroidered cushions, tea ceremony sets, and silk lamps — bringing the elegance of Suzhou craft into every corner of your home. Where tradition lives in daily rituals.</p>
+                    <div class="category-tags">
+                        <span class="tag" data-en="Silk Cushions" data-zh="丝绸抱枕" data-ar="وسائد الحرير">Silk Cushions</span>
+                        <span class="tag" data-en="Tea Ceremony" data-zh="茶道用品" data-ar="لوازم حفل الشاي">Tea Ceremony</span>
+                        <span class="tag" data-en="Silk Lamps" data-zh="丝绸灯饰" data-ar="مصابيح الحرير">Silk Lamps</span>
+                    </div>
+                    <a href="contact.html" class="btn-outline" data-en="Inquire Now →" data-zh="立即咨询 →" data-ar="استفسر الآن ←">Inquire Now →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 分类 4：现代文创 -->
+    <section class="category-section cat-modern">
+        <div class="page-container">
+            <div class="category-grid reverse">
+                <div class="category-image">
+                    <img src="fan.png" alt="Modern Creations - Suzhou Embroidery">
+                </div>
+                <div class="category-text">
+                    <div class="category-number">04</div>
+                    <h2 class="category-title" data-en="Modern Creations" data-zh="现代文创" data-ar="الإبداعات الحديثة">Modern Creations</h2>
+                    <p class="category-desc" data-en="Mini embroidery art, DIY kits, and digital experiences — making Suzhou embroidery accessible, shareable, and alive for the next generation. Small in size, infinite in meaning." data-zh="微型刺绣艺术、DIY 套装和数字体验——让苏州刺绣可被触及、可分享、为下一代而鲜活。尺寸虽小，意义无穷。">Mini embroidery art, DIY kits, and digital experiences — making Suzhou embroidery accessible, shareable, and alive for the next generation. Small in size, infinite in meaning.</p>
+                    <div class="category-tags">
+                        <span class="tag" data-en="Mini Art" data-zh="微型艺术" data-ar="فن مصغر">Mini Art</span>
+                        <span class="tag" data-en="DIY Kits" data-zh="DIY套装" data-ar="مجموعات DIY">DIY Kits</span>
+                        <span class="tag" data-en="Gifts & Souvenirs" data-zh="礼品纪念" data-ar="هدايا وتذكارات">Gifts & Souvenirs</span>
+                    </div>
+                    <a href="contact.html" class="btn-outline" data-en="Inquire Now →" data-zh="立即咨询 →" data-ar="استفسر الآن ←">Inquire Now →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 区 -->
+    <section class="categories-cta">
+        <div class="page-container" style="text-align:center;">
+            <h2 class="cta-title" data-en="Have a vision in mind?" data-zh="心中有愿景？" data-ar="هل لديك رؤية في بالك؟">Have a vision in mind?</h2>
+            <p class="cta-desc" data-en="We create bespoke embroidery pieces tailored to your story. From initial concept to final stitch — let's make something extraordinary together." data-zh="我们创作量身定制的刺绣作品，契合您的故事。从最初概念到最后一针——让我们一起创造非凡之作。">We create bespoke embroidery pieces tailored to your story. From initial concept to final stitch — let's make something extraordinary together.</p>
+            <a href="contact.html" class="btn-primary" data-en="Start a Project" data-zh="开始项目" data-ar="ابدأ مشروعاً">Start a Project</a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer page-container">
+        <div data-en="© 2026 SIY. All rights reserved." data-zh="© 2026 SIY。保留所有权利。" data-ar="© 2026 SIY. جميع الحقوق محفوظة.">© 2026 SIY. All rights reserved.</div>
+        <div class="footer-center">
+            <a href="#" data-en="IG" data-zh="IG" data-ar="انستغرام">IG</a>
+            <a href="#" data-en="Pinterest" data-zh="Pinterest" data-ar="بينتيرست">Pinterest</a>
+        </div>
+        <div data-en="Suzhou, China" data-zh="中国苏州" data-ar="سوتشو، الصين">Suzhou, China</div>
+    </footer>
+
+</body>
+</html>
