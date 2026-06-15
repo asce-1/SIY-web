@@ -1,0 +1,733 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(170deg, #F5EDE4 0%, #EDE3D8 40%, #E8D9C8 100%);
+    background-attachment: fixed;
+    font-family: 'Times New Roman', serif;
+    color: #2C2C2C;
+    overflow-x: hidden;
+}
+
+/* 全局导航 */
+.global-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 96px;
+    background: rgba(245, 237, 228, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(224, 220, 212, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #2C2C2C;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    letter-spacing: 6px;
+    font-weight: 500;
+    color: #2C2C2C;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 64px;
+    font-size: 15px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.nav-menu a {
+    color: #2C2C2C;
+    text-decoration: none;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.nav-menu a:hover {
+    color: #284059;
+}
+
+.nav-cta {
+    border: 1px solid #284059;
+    color: #284059;
+    padding: 14px 36px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-cta:hover {
+    background: #284059;
+    color: #FAF8F2;
+}
+
+.nav-cta.nav-active {
+    background: #284059;
+    color: #FAF8F2;
+    border-color: #284059;
+}
+
+.lang-toggle {
+    border: 1px solid #CCC;
+    background: transparent;
+    color: #888;
+    padding: 8px 16px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s;
+    margin-left: 12px;
+}
+
+.lang-toggle:hover {
+    border-color: #284059;
+    color: #284059;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-menu a.nav-active {
+    color: #284059;
+    border-bottom: 2px solid #284059;
+    padding-bottom: 4px;
+}
+
+/* 页面容器 */
+.page-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+/* 首页 Hero 区 */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 96px;
+}
+
+.hero-left {
+    flex: 1;
+    height: 80%;
+    background: #E8E4DC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.hero-image-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 
+        inset 0 0 60px rgba(250, 248, 242, 0.4),
+        0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.hero-right {
+    flex: 1;
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-subtitle {
+    font-size: 11px;
+    color: #284059;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 56px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+.hero-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 40px;
+    font-family: 'Inter', sans-serif;
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary {
+    border: 1px solid #284059;
+    background: transparent;
+    color: #284059;
+    padding: 14px 32px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: #284059;
+    color: #FAF8F2;
+}
+
+.btn-secondary-solid {
+    border: 1px solid #284059;
+    background: #284059;
+    color: #FAF8F2;
+    padding: 14px 32px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secondary-solid:hover {
+    background: #1A2A3A;
+    border-color: #1A2A3A;
+}
+
+/* 品牌标语区 */
+.slogan-section {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.slogan-text {
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-align: center;
+    font-style: italic;
+}
+
+.slogan-line {
+    position: absolute;
+    width: 60px;
+    height: 1px;
+    background: #5B8C5A;
+    top: 50%;
+}
+
+.slogan-line.left {
+    left: 80px;
+}
+
+.slogan-line.right {
+    right: 80px;
+}
+
+/* 品牌故事预览区 */
+.heritage-section {
+    display: flex;
+    gap: 60px;
+    padding: 100px 0;
+}
+
+.heritage-left {
+    flex: 5;
+}
+
+.heritage-title {
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+.heritage-right {
+    flex: 7;
+}
+
+.heritage-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 20px;
+}
+
+.heritage-link {
+    font-size: 13px;
+    color: #284059;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.heritage-link:hover {
+    text-decoration: underline;
+}
+
+/* 代表作精选区 */
+.selected-works {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.work-card {
+    background: #E8E4DC;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.work-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    display: block;
+}
+
+.work-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.work-info {
+    padding: 20px;
+}
+
+.work-name {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.work-artisan {
+    font-size: 13px;
+    color: #888;
+    font-family: 'Inter', sans-serif;
+}
+
+.works-cta {
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* 非遗说明区 */
+.mission-section {
+    padding: 120px 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.03);
+    margin: 0 -80px;
+    padding: 120px 80px;
+}
+
+.mission-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    font-family: 'Inter', sans-serif;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* 咨询引导区 */
+.inquire-banner {
+    background: #F0F2F5;
+    padding: 80px 0;
+    text-align: center;
+    margin: 0 -80px;
+}
+
+.inquire-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+/* 页脚 */
+.footer {
+    padding: 60px 0;
+    border-top: 1px solid #E0DCD4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #888;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-center {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-center a {
+    color: #888;
+    text-decoration: none;
+}
+
+.footer-center a:hover {
+    color: #284059;
+}
+
+/* Collection 页 */
+.collection-header {
+    padding: 120px 0 60px;
+    text-align: center;
+}
+
+.collection-title {
+    font-size: 48px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.collection-desc {
+    font-size: 15px;
+    color: #888;
+    font-family: 'Inter', sans-serif;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    padding-bottom: 80px;
+}
+
+.art-card {
+    background: #FFF;
+    border: 1px solid #E0DCD4;
+}
+
+.art-image {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    display: block;
+}
+
+.art-card:hover .art-image {
+    transform: scale(1.01);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.15);
+}
+
+.art-info {
+    padding: 24px;
+}
+
+.art-name {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.art-artisan {
+    font-size: 14px;
+    color: #888;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 16px;
+}
+
+.price-placeholder {
+    height: 40px;
+    background: #F5F5F5;
+    border: 2px dashed #CCC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #AAA;
+    margin-bottom: 16px;
+}
+
+.art-cta {
+    width: 100%;
+    border: 1px solid #284059;
+    background: transparent;
+    color: #284059;
+    padding: 12px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.art-cta:hover {
+    background: #284059;
+    color: #FAF8F2;
+}
+
+.load-more {
+    text-align: center;
+    padding: 60px 0;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #284059;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* 浮动咨询按钮 */
+.float-inquire {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    background: #284059;
+    color: #FFF;
+    padding: 16px 24px;
+    border-radius: 50px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+}
+
+/* 加载更多按钮 */
+.load-more-wrap {
+    text-align: center;
+    padding: 60px 0 40px;
+}
+
+.load-more-btn {
+    border: 1px solid #284059;
+    background: transparent;
+    color: #284059;
+    padding: 14px 48px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s;
+}
+
+.load-more-btn:hover {
+    background: #284059;
+    color: #FAF8F2;
+}
+
+.art-card-hidden {
+    display: none;
+}
+
+/* About 页面样式 */
+.about-hero {
+    padding: 140px 0 80px;
+}
+
+.about-hero h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+.about-hero p {
+    max-width: 720px;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    font-family: 'Inter', sans-serif;
+}
+
+.artisan-section {
+    display: flex;
+    gap: 60px;
+    padding: 100px 0;
+}
+
+.artisan-image {
+    flex: 1;
+    background: #E8E4DC;
+    height: 520px;
+    border-radius: 2px;
+    box-shadow: 
+        inset 0 0 50px rgba(250, 248, 242, 0.3),
+        0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.artisan-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.artisan-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.artisan-text p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+    font-family: 'Inter', sans-serif;
+}
+
+.craft-section {
+    background: rgba(0, 0, 0, 0.03);
+    padding: 120px 0;
+    text-align: center;
+}
+
+.craft-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.craft-section p {
+    max-width: 800px;
+    margin: 0 auto 24px;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Contact 页面样式 */
+.contact-section {
+    padding: 140px 0;
+    display: flex;
+    gap: 80px;
+}
+
+.contact-left {
+    flex: 1;
+}
+
+.contact-left h1 {
+    font-size: 44px;
+    margin-bottom: 24px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.contact-left p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 32px;
+}
+
+.contact-info {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+}
+
+.contact-right {
+    flex: 1;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-input {
+    padding: 16px;
+    border: 1px solid #D6D2CA;
+    background: #F5F0EB;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #2C2C2C;
+    border-radius: 2px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-input::placeholder {
+    color: #999;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #284059;
+}
+
+textarea.form-input {
+    resize: vertical;
+    min-height: 120px;
+    font-family: 'Inter', sans-serif;
+}
+
+.form-submit {
+    align-self: flex-start;
+}

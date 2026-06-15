@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SIY - Suzhou Silk Ornament | Handcrafted Embroidery</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="scripts.js"></script>
+
+</head>
+
+<body>
+
+    <!-- 全局导航 -->
+
+    <nav class="global-nav">
+
+         <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="SIY" class="logo-img">
+                <span class="logo-text">SIY</span>
+            </a>
+
+
+        <div class="nav-menu">
+
+            <a href="index.html" class="nav-active" data-en="Home" data-zh="首页">Home</a>
+
+            <a href="collection.html" data-en="Collection" data-zh="作品集">Collection</a>
+
+            <a href="about.html" data-en="About" data-zh="关于">About</a>
+
+        </div>
+
+        <div class="nav-right">
+
+            <a href="contact.html" class="nav-cta" data-en="Contact" data-zh="联系">Contact</a>
+
+            <button id="lang-toggle" class="lang-toggle" onclick="toggleLang()">中文</button>
+
+        </div>
+
+    </nav>
+
+    
+
+    <!-- 区块1: Hero 首屏 -->
+
+    <section class="hero-section">
+
+        <div class="hero-left">
+
+            <img class="hero-image-placeholder" src="hero-lotus.png" alt="Suzhou Embroidery - Lotus">
+
+        </div>
+
+        <div class="hero-right">
+
+            <div class="hero-subtitle" data-en="Suzhou Intangible Heritage" data-zh="苏州非物质遗产">Suzhou Intangible Heritage</div>
+
+            <h1 class="hero-title" data-en-html="The Art of<br>Suzhou<br>Embroidery" data-zh-html="苏州刺绣<br>艺术">The Art of<br>Suzhou<br>Embroidery</h1>
+
+            <p class="hero-desc" data-en-html="Hand-stitched by master embroiderers from Suzhou.<br>Traditional oriental craft redefined for contemporary global art collectors." data-zh-html="由苏州刺绣大师手工绣制。<br>传统东方工艺，为当代全球艺术收藏者重新定义。">Hand-stitched by master embroiderers from Suzhou.<br>Traditional oriental craft redefined for contemporary global art collectors.</p>
+
+            <div class="hero-cta-group">
+
+                <a href="collection.html" class="btn-primary" data-en="Explore Collection" data-zh="浏览作品集">Explore Collection</a>
+
+                <a href="about.html" class="btn-primary btn-secondary-solid" data-en="Our Story →" data-zh="我们的故事 →">Our Story →</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <!-- 区块2: 品牌标语区 -->
+
+    <section class="slogan-section">
+
+        <div class="slogan-line left"></div>
+
+        <h2 class="slogan-text" data-en="Preserve tradition, reimagine for the world" data-zh="传承传统，为世界重新想象">Preserve tradition, reimagine for the world</h2>
+
+        <div class="slogan-line right"></div>
+
+    </section>
+
+    
+
+    <!-- 区块3: 品牌故事预览区 -->
+
+    <section class="heritage-section page-container">
+
+        <div class="heritage-left">
+
+            <h2 class="heritage-title" data-en-html="Our<br>Heritage" data-zh-html="我们的<br>传承">Our<br>Heritage</h2>
+
+        </div>
+
+        <div class="heritage-right">
+
+            <p class="heritage-text" data-en="In Suzhou, master embroiderers preserve a 2,500-year-old craft. Each piece is hand-stitched with mulberry silk thread—no two are exactly alike." data-zh="在苏州，刺绣大师传承着2500年的工艺。每一件作品都使用桑蚕丝线手工绣制——没有两件是完全相同的。">In Suzhou, master embroiderers preserve a 2,500-year-old craft. Each piece is hand-stitched with mulberry silk thread—no two are exactly alike.</p>
+
+            <p class="heritage-text" data-en="Our mission is to bridge ancient Suzhou embroidery techniques with contemporary global design, creating timeless art pieces that belong in modern homes worldwide." data-zh="我们的使命是连接古老的苏州刺绣技艺与当代全球设计，创造属于世界各地现代家庭的永恒艺术作品。">Our mission is to bridge ancient Suzhou embroidery techniques with contemporary global design, creating timeless art pieces that belong in modern homes worldwide.</p>
+
+            <a href="about.html" class="heritage-link" data-en="Read Full Story →" data-zh="阅读完整故事 →">Read Full Story →</a>
+
+        </div>
+
+    </section>
+
+    
+
+    <!-- 区块4: 代表作精选区 -->
+
+    <section class="selected-works page-container">
+
+        <h2 class="section-title" data-en="Selected Artworks" data-zh="精选作品">Selected Artworks</h2>
+
+        <div class="works-grid">
+
+            <div class="work-card">
+
+                <img class="work-image" src="images/image_cat.png" alt="Suzhou Embroidery - Cat Portrait">
+
+                <div class="work-info">
+
+                    <div class="work-name" data-en="The Observer" data-zh="观者">The Observer</div>
+
+                </div>
+
+            </div>
+
+            <div class="work-card">
+
+                <img class="work-image" src="images/image_goldfl.jpeg" alt="Suzhou Embroidery - Flower">
+
+                <div class="work-info">
+
+                    <div class="work-name" data-en="Golden Bloom" data-zh="金蕊">Golden Bloom</div>
+
+                </div>
+
+            </div>
+
+            <div class="work-card">
+
+                <div class="work-image" data-en="Bamboo Forest" data-zh="竹林">Bamboo Forest</div>
+
+                <div class="work-info">
+
+                    <div class="work-name" data-en="Bamboo Forest" data-zh="竹林">Bamboo Forest</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="works-cta">
+
+            <a href="collection.html" class="btn-primary" data-en="View Full Collection" data-zh="查看全部作品">View Full Collection</a>
+
+        </div>
+
+    </section>
+
+    
+
+    <!-- 区块5: 非遗说明区 -->
+
+    <section class="mission-section">
+
+        <p class="mission-text" data-en="Each Suzhou embroidery piece represents 2,500 years of intangible cultural heritage. Our master artisans in Suzhou dedicate 10-40 hours to create a single artwork, using only 100% mulberry silk thread with naturally derived dyes." data-zh="每一件苏州刺绣作品代表着2500年的非物质文化遗产。我们的苏州刺绣大师投入10-40小时创作一件作品，仅使用100%桑蚕丝线和天然染料。">Each Suzhou embroidery piece represents 2,500 years of intangible cultural heritage. Our master artisans in Suzhou dedicate 10-40 hours to create a single artwork, using only 100% mulberry silk thread with naturally derived dyes.</p>
+
+        <p class="mission-text" data-en="We don't mass-produce. We don't compromise quality. Every piece is one-of-a-kind, carrying the soul of Suzhou's embroidery tradition into contemporary global art collections." data-zh="我们不量产。我们不妥协质量。每一件作品都是独一无二的，带着苏州刺绣传统的灵魂进入当代全球艺术收藏。">We don't mass-produce. We don't compromise quality. Every piece is one-of-a-kind, carrying the soul of Suzhou's embroidery tradition into contemporary global art collections.</p>
+
+    </section>
+
+    
+
+    <!-- 区块6: 咨询引导区 -->
+
+    <section class="inquire-banner">
+
+        <h2 class="inquire-title" data-en="Interested in our handcrafted embroidery artworks?" data-zh="对我们的手工刺绣艺术作品感兴趣？">Interested in our handcrafted embroidery artworks?</h2>
+
+        <a href="contact.html" class="btn-primary" data-en="Submit an Inquiry" data-zh="提交咨询">Submit an Inquiry</a>
+
+    </section>
+
+    
+
+    <!-- 页脚 -->
+
+    <footer class="footer page-container">
+
+        <div data-en="© 2026 SIY. All rights reserved." data-zh="© 2026 SIY。保留所有权利。">© 2026 SIY. All rights reserved.</div>
+
+        <div class="footer-center">
+
+            <a href="#" data-en="IG" data-zh="IG">IG</a>
+
+            <a href="#" data-en="Pinterest" data-zh="Pinterest">Pinterest</a>
+
+        </div>
+
+        <div data-en="Suzhou, China" data-zh="中国苏州">Suzhou, China</div>
+
+    </footer>
+
+</body>
+
+</html>

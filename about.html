@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - SIY | Suzhou Silk Ornament</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <!-- 全局导航 -->
+    <nav class="global-nav">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="SIY" class="logo-img">
+            <span class="logo-text">SIY</span>
+        </a>
+        <div class="nav-menu">
+            <a href="index.html" data-en="Home" data-zh="首页">Home</a>
+            <a href="collection.html" data-en="Collection" data-zh="作品集">Collection</a>
+            <a href="about.html" class="nav-active" data-en="About" data-zh="关于">About</a>
+        </div>
+        <div class="nav-right">
+            <a href="contact.html" class="nav-cta" data-en="Contact" data-zh="联系">Contact</a>
+            <button id="lang-toggle" class="lang-toggle" onclick="toggleLang()">中文</button>
+        </div>
+    </nav>
+    
+    <!-- Hero -->
+    <section class="page-container about-hero">
+        <h1 data-en-html="Rooted in Suzhou,<br>Stitched for the World" data-zh-html="扎根苏州，<br>绣制世界">Rooted in Suzhou,<br>Stitched for the World</h1>
+        <p data-en="For over 2,500 years, Suzhou embroidery has been revered as one of China's finest intangible cultural heritages. In Suzhou, our master artisans continue this legacy—one needle, one thread, one story at a time." data-zh="超过2500年来，苏州刺绣一直被誉为中国最精美的非物质文化遗产之一。在苏州，我们的大师级刺绣艺人延续着这一传承——一针一线，一个故事接着一个故事。">For over 2,500 years, Suzhou embroidery has been revered as one of China's finest intangible cultural heritages. In Suzhou, our master artisans continue this legacy—one needle, one thread, one story at a time.</p>
+    </section>
+    
+    <!-- 绣娘肖像区 -->
+    <section class="page-container artisan-section">
+        <div class="artisan-image"></div>
+        <div class="artisan-text">
+            <h2 data-en="The Hands Behind the Art" data-zh="艺术背后的手">The Hands Behind the Art</h2>
+            <p data-en="Every SIY artwork is hand-stitched by a certified Suzhou embroidery master. Most have dedicated 20+ years to perfecting their craft. No machines. No shortcuts." data-zh="每一件SIY作品都由认证的苏州刺绣大师手工绣制。大多数人已经投入20多年完善他们的技艺。没有机器。没有捷径。">Every SIY artwork is hand-stitched by a certified Suzhou embroidery master. Most have dedicated 20+ years to perfecting their craft. No machines. No shortcuts.</p>
+        </div>
+    </section>
+    
+    <!-- 工艺说明 -->
+    <section class="craft-section">
+        <div class="page-container">
+            <h2 data-en="The Craft" data-zh="工艺">The Craft</h2>
+            <p data-en="100% mulberry silk threads. Naturally derived dyes. Up to 40 hours of meticulous hand-stitching per piece." data-zh="100%桑蚕丝线。天然染料。每件作品精心手工刺绣长达40小时。">100% mulberry silk threads. Naturally derived dyes. Up to 40 hours of meticulous hand-stitching per piece.</p>
+            <p data-en="Our work bridges centuries-old Suzhou techniques with contemporary global aesthetics—creating heirloom art for modern living." data-zh="我们的作品连接了几个世纪前的苏州技艺与当代全球美学——为现代生活创造传世艺术。">Our work bridges centuries-old Suzhou techniques with contemporary global aesthetics—creating heirloom art for modern living.</p>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer class="footer page-container">
+        <div data-en="© 2026 SIY. All rights reserved." data-zh="© 2026 SIY。保留所有权利。">© 2026 SIY. All rights reserved.</div>
+        <div class="footer-center">
+            <a href="#" data-en="IG" data-zh="IG">IG</a>
+            <a href="#" data-en="Pinterest" data-zh="Pinterest">Pinterest</a>
+        </div>
+        <div data-en="Suzhou, China" data-zh="中国苏州">Suzhou, China</div>
+    </footer>
+</body>
+</html>
