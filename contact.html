@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - SIY | Suzhou Silk Ornament</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
@@ -14,7 +14,7 @@
     <!-- 全局导航 -->
     <nav class="global-nav">
         <a href="index.html" class="logo">
-            <img src="images/logo.png" alt="SIY" class="logo-img">
+            <img src="logo.png" alt="SIY" class="logo-img">
             <span class="logo-text">SIY</span>
         </a>
         <div class="nav-menu">
@@ -42,6 +42,7 @@
             <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="contact-form">
                 <input type="hidden" name="access_key" value="69e42405-7a69-4307-af53-862b4c621a49">
                 <input type="hidden" name="subject" value="SIY Website Inquiry">
+                <input type="hidden" name="_next" value="https://siy-web.vercel.app/contact.html">
                 <input type="text" name="name" placeholder="Full Name" data-en-placeholder="Full Name" data-zh-placeholder="姓名" class="form-input" required>
                 <input type="email" name="email" placeholder="Email Address" data-en-placeholder="Email Address" data-zh-placeholder="邮箱地址" class="form-input" required>
                 <select name="inquiry_type" class="form-input" required>

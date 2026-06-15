@@ -89,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const statusEl = document.getElementById('form-status');
         const submitBtn = form.querySelector('.form-submit');
 
-        // 显示提交中状态
         statusEl.innerHTML = '<p style="color:#888;font-size:13px;padding:8px 0;">Sending...</p>';
         submitBtn.disabled = true;
         submitBtn.style.opacity = '0.6';
@@ -98,21 +97,32 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(form);
             const response = await fetch(this.action, {
                 method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
+                body: formData
+                // 不设置 Content-Type，让浏览器自动处理 multipart/form-data + boundary
             });
 
-            const data = await response.json();
+            const text = await response.text();
+            let data;
+            try {
+                data = JSON.parse(text);
+            } catch {
+                // 返回的不是 JSON，可能是成功页 HTML，视为提交成功
+                data = { success: true };
+            }
 
             if (response.ok && data.success) {
                 statusEl.innerHTML = '<p style="color:#5B8C5A;font-size:14px;padding:12px 0;background:rgba(91,140,90,0.08);border-radius:2px;">✓ Message sent successfully! We\'ll get back to you within 1–2 business days.</p>';
                 form.reset();
             } else {
-                throw new Error(data.message || 'Submission failed');
+                throw new Error(data.message || `Server returned ${response.status}`);
             }
         } catch (error) {
-            console.error('Form error:', error);
-            statusEl.innerHTML = '<p style="color:#B85C38;font-size:14px;padding:12px 0;background:rgba(184,92,56,0.08);border-radius:2px;">✗ Something went wrong. Please try again or email us directly at 1559767097@qq.com</p>';
+            console.error('Form submit error:', error);
+            // 降级：fetch 失败（CORS/网络），改用原生提交跳转 web3forms 成功页
+            statusEl.innerHTML = '<p style="color:#888;font-size:13px;padding:8px 0;">Redirecting to submit...</p>';
+            // 移除 preventDefault 效果，原生提交
+            this.removeEventListener('submit', arguments.callee);
+            this.submit();
         } finally {
             submitBtn.disabled = false;
             submitBtn.style.opacity = '1';
