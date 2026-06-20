@@ -154,6 +154,7 @@ function initMobileMenu() {
         const isOpen = navMenu.classList.toggle('nav-menu-open');
         hamburger.classList.toggle('active', isOpen);
         document.body.style.overflow = isOpen ? 'hidden' : '';
+        document.body.classList.toggle('menu-is-open', isOpen);
     });
 
     // Close menu when a nav link is clicked
@@ -162,6 +163,7 @@ function initMobileMenu() {
             hamburger.classList.remove('active');
             navMenu.classList.remove('nav-menu-open');
             document.body.style.overflow = '';
+            document.body.classList.remove('menu-is-open');
         });
     });
 
@@ -171,6 +173,7 @@ function initMobileMenu() {
             hamburger.classList.remove('active');
             navMenu.classList.remove('nav-menu-open');
             document.body.style.overflow = '';
+            document.body.classList.remove('menu-is-open');
         }
     });
 }
