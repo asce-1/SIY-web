@@ -1,122 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collection - SIY | Suzhou Silk Ornament</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:wght@400;500;600&family=Noto+Naskh+Arabic:wght@400;500&family=Noto+Sans+SC:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
 </head>
 <body>
+
     <!-- 全局导航 -->
     <nav class="global-nav">
         <a href="index.html" class="logo">
-            <img src="images/logo.png" alt="SIY" class="logo-img">
+            <img src="logo.png" alt="SIY" class="logo-img">
             <span class="logo-text">SIY</span>
         </a>
-        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
         <div class="nav-menu">
-            <a href="index.html" data-en="Home" data-zh="首页">Home</a>
-            <a href="collection.html" class="nav-active" data-en="Collection" data-zh="作品集">Collection</a>
-            <a href="about.html" data-en="About" data-zh="关于">About</a>
+            <a href="index.html" data-en="Home" data-zh="首页" data-ar="الرئيسية">Home</a>
+            <a href="categories.html" data-en="Our Craft" data-zh="工艺世界" data-ar="عالمنا الحرفي">Our Craft</a>
+            <a href="collection.html" class="nav-active" data-en="Collection" data-zh="作品集" data-ar="المجموعة">Collection</a>
+            <a href="about.html" data-en="About" data-zh="关于" data-ar="من نحن">About</a>
         </div>
         <div class="nav-right">
-            <a href="contact.html" class="nav-cta" data-en="Contact" data-zh="联系">Contact</a>
-            <button id="lang-toggle" class="lang-toggle" onclick="toggleLang()">中文</button>
+            <a href="contact.html" class="nav-cta" data-en="Contact" data-zh="联系" data-ar="اتصل بنا">Contact</a>
+            <select id="lang-select" class="lang-select"></select>
         </div>
     </nav>
-    
-    <!-- 区块1: 页面标题头部 -->
+
+    <!-- 页面标题头部 -->
     <section class="collection-header page-container">
-        <h1 class="collection-title" data-en="Collection" data-zh="作品集">Collection</h1>
-        <p class="collection-desc" data-en="Each piece is one-of-a-kind hand embroidery by Suzhou master artisans" data-zh="每一件都是苏州刺绣大师手工制作的一件作品">Each piece is one-of-a-kind hand embroidery by Suzhou master artisans</p>
+        <h1 class="collection-title" data-en="Collection" data-zh="作品集" data-ar="المجموعة">Collection</h1>
+        <p class="collection-desc" data-en="Each piece is one-of-a-kind hand embroidery by Suzhou master artisans" data-zh="每一件都是苏州刺绣大师手工制作的一件作品" data-ar="كل قطعة هي عمل مطرز يدوياً فريد من نوعه بأيدي أساتذة سوتشو">Each piece is one-of-a-kind hand embroidery by Suzhou master artisans</p>
     </section>
-    
-    <!-- 区块2: 作品画廊网格 -->
+
+    <!-- 作品画廊网格 -->
     <section class="page-container">
         <div class="gallery-grid">
+
+            <!-- 1 - Lionheart -->
             <div class="art-card">
-                <img class="art-image" src="images/image_pop.png" alt="Suzhou Embroidery - Vinyl Record Player">
+                <img class="art-image" src="lion.jpg" alt="Suzhou Embroidery - Lionheart">
                 <div class="art-info">
-                    <div class="art-name" data-en="Silk & Sound" data-zh="丝韵">Silk & Sound</div>
+                    <div class="art-name" data-en="Lionheart" data-zh="狮心" data-ar="قلب الأسد">Lionheart</div>
                 </div>
             </div>
-            
+
+            <!-- 2 - White Orchids -->
             <div class="art-card">
-                <img class="art-image" src="images/image_panda.jpeg" alt="Suzhou Embroidery - Panda">
+                <img class="art-image" src="书法与扇.jpg" alt="Suzhou Embroidery - White Orchids">
                 <div class="art-info">
-                    <div class="art-name" data-en="Bamboo Dream" data-zh="竹梦">Bamboo Dream</div>
+                    <div class="art-name" data-en="White Orchids" data-zh="白兰幽蝶" data-ar="الأوركيد البيضاء">White Orchids</div>
                 </div>
             </div>
-            
+
+            <!-- 3 - Plum & Bluebird -->
             <div class="art-card">
-                <div class="art-image" data-en="Bamboo Forest" data-zh="竹林">Bamboo Forest</div>
+                <img class="art-image" src="c2.jpg" alt="Suzhou Embroidery - Plum & Bluebird">
                 <div class="art-info">
-                    <div class="art-name" data-en="Bamboo Forest" data-zh="竹林">Bamboo Forest</div>
+                    <div class="art-name" data-en="Plum & Bluebird" data-zh="梅雀迎春" data-ar="الخوازرق والأزرق">Plum & Bluebird</div>
                 </div>
             </div>
-            
+
+            <!-- 4 - Bamboo Dream -->
             <div class="art-card">
-                <div class="art-image" data-en="Lotus Pond" data-zh="荷塘">Lotus Pond</div>
+                <img class="art-image" src="image_panda.jpeg" alt="Suzhou Embroidery - Bamboo Dream">
                 <div class="art-info">
-                    <div class="art-name" data-en="Lotus Pond" data-zh="荷塘">Lotus Pond</div>
+                    <div class="art-name" data-en="Bamboo Dream" data-zh="竹梦" data-ar="حلم الخيزران">Bamboo Dream</div>
                 </div>
             </div>
 
             <!-- 后4张，初始隐藏 -->
+            <!-- 5 - White Peony Garden -->
             <div class="art-card art-card-hidden">
-                <div class="art-image" data-en="Peony in Moonlight" data-zh="月光牡丹">Peony in Moonlight</div>
+                <img class="art-image" src="white flowers.jpeg" alt="Suzhou Embroidery - White Peony Garden">
                 <div class="art-info">
-                    <div class="art-name" data-en="Peony in Moonlight" data-zh="月光牡丹">Peony in Moonlight</div>
+                    <div class="art-name" data-en="White Peony Garden" data-zh="白花凝香" data-ar="حديقة الفولات البيضاء">White Peony Garden</div>
                 </div>
             </div>
 
+            <!-- 6 - Crimson Watcher (Owl) -->
             <div class="art-card art-card-hidden">
-                <div class="art-image" data-en="Winter Crane" data-zh="冬鹤">Winter Crane</div>
+                <img class="art-image" src="owl.jpg" alt="Suzhou Embroidery - Crimson Watcher">
                 <div class="art-info">
-                    <div class="art-name" data-en="Winter Crane" data-zh="冬鹤">Winter Crane</div>
+                    <div class="art-name" data-en="Crimson Watcher" data-zh="红衣守望者" data-ar="المراقب القرمزي">Crimson Watcher</div>
                 </div>
             </div>
 
+            <!-- 7 - Lotus Awakening -->
             <div class="art-card art-card-hidden">
-                <div class="art-image" data-en="Mountain Mist" data-zh="山雾">Mountain Mist</div>
+                <img class="art-image" src="c3.png" alt="Suzhou Embroidery - Lotus Awakening">
                 <div class="art-info">
-                    <div class="art-name" data-en="Mountain Mist" data-zh="山雾">Mountain Mist</div>
+                    <div class="art-name" data-en="Lotus Awakening" data-zh="荷韵初醒" data-ar="استيقاظ اللوتس">Lotus Awakening</div>
                 </div>
             </div>
 
+            <!-- 8 - Phoenix & Peony -->
             <div class="art-card art-card-hidden">
-                <div class="art-image" data-en="River Scene" data-zh="江景">River Scene</div>
+                <img class="art-image" src="c1.jpg" alt="Suzhou Embroidery - Phoenix & Peony">
                 <div class="art-info">
-                    <div class="art-name" data-en="River Scene" data-zh="江景">River Scene</div>
+                    <div class="art-name" data-en="Phoenix & Peony" data-zh="凤栖牡丹" data-ar="الفينيق والفولة">Phoenix & Peony</div>
                 </div>
             </div>
+
         </div>
-        
-        <!-- 区块3: Load More -->
+
+        <!-- Load More -->
         <div class="load-more-wrap">
-            <button class="load-more-btn" id="load-more-btn" onclick="loadMoreWorks()" data-en="Load More Works" data-zh="加载更多作品">Load More Works</button>
+            <button class="load-more-btn" id="load-more-btn" onclick="loadMoreWorks()" data-en="Load More Works" data-zh="加载更多作品" data-ar="تحميل المزيد من الأعمال">Load More Works</button>
         </div>
     </section>
-    
+
     <!-- 浮动咨询按钮 -->
-    <a href="contact.html" class="float-inquire" data-en="Inquire About Artwork" data-zh="关于作品咨询">Inquire About Artwork</a>
-    
+    <a href="contact.html" class="float-inquire" data-en="Inquire About Artwork" data-zh="关于作品咨询" data-ar="استفسار عن العمل الفني">Inquire About Artwork</a>
+
     <!-- 页脚 -->
     <footer class="footer page-container">
-        <div data-en="© 2026 SIY. All rights reserved." data-zh="© 2026 SIY。保留所有权利。">© 2026 SIY. All rights reserved.</div>
+        <div data-en="© 2026 SIY. All rights reserved." data-zh="© 2026 SIY。保留所有权利。" data-ar="© 2026 SIY. جميع الحقوق محفوظة.">© 2026 SIY. All rights reserved.</div>
         <div class="footer-center">
-            <a href="#" data-en="IG" data-zh="IG">IG</a>
-            <a href="#" data-en="Pinterest" data-zh="Pinterest">Pinterest</a>
+            <a href="#" data-en="IG" data-zh="IG" data-ar="انستغرام">IG</a>
+            <a href="#" data-en="Pinterest" data-zh="Pinterest" data-ar="بينتيرست">Pinterest</a>
         </div>
-        <div data-en="Suzhou, China" data-zh="中国苏州">Suzhou, China</div>
+        <div data-en="Suzhou, China" data-zh="中国苏州" data-ar="سوتشو، الصين">Suzhou, China</div>
     </footer>
+
 </body>
 </html>

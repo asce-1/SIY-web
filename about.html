@@ -1,70 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - SIY | Suzhou Silk Ornament</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:wght@400;500;600&family=Noto+Naskh+Arabic:wght@400;500&family=Noto+Sans+SC:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
 </head>
 <body>
+
     <!-- 全局导航 -->
     <nav class="global-nav">
         <a href="index.html" class="logo">
-            <img src="images/logo.png" alt="SIY" class="logo-img">
+            <img src="logo.png" alt="SIY" class="logo-img">
             <span class="logo-text">SIY</span>
         </a>
-        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
         <div class="nav-menu">
-            <a href="index.html" data-en="Home" data-zh="首页">Home</a>
-            <a href="collection.html" data-en="Collection" data-zh="作品集">Collection</a>
-            <a href="about.html" class="nav-active" data-en="About" data-zh="关于">About</a>
+            <a href="index.html" data-en="Home" data-zh="首页" data-ar="الرئيسية">Home</a>
+            <a href="categories.html" data-en="Our Craft" data-zh="工艺世界" data-ar="عالمنا الحرفي">Our Craft</a>
+            <a href="collection.html" data-en="Collection" data-zh="作品集" data-ar="المجموعة">Collection</a>
+            <a href="about.html" class="nav-active" data-en="About" data-zh="关于" data-ar="من نحن">About</a>
         </div>
         <div class="nav-right">
-            <a href="contact.html" class="nav-cta" data-en="Contact" data-zh="联系">Contact</a>
-            <button id="lang-toggle" class="lang-toggle" onclick="toggleLang()">中文</button>
+            <a href="contact.html" class="nav-cta" data-en="Contact" data-zh="联系" data-ar="اتصل بنا">Contact</a>
+            <select id="lang-select" class="lang-select"></select>
         </div>
     </nav>
-    
+
     <!-- Hero -->
     <section class="page-container about-hero">
-        <h1 data-en-html="Rooted in Suzhou,<br>Stitched for the World" data-zh-html="扎根苏州，<br>绣制世界">Rooted in Suzhou,<br>Stitched for the World</h1>
-        <p data-en="For over 2,500 years, Suzhou embroidery has been revered as one of China's finest intangible cultural heritages. In Suzhou, our master artisans continue this legacy—one needle, one thread, one story at a time." data-zh="超过2500年来，苏州刺绣一直被誉为中国最精美的非物质文化遗产之一。在苏州，我们的大师级刺绣艺人延续着这一传承——一针一线，一个故事接着一个故事。">For over 2,500 years, Suzhou embroidery has been revered as one of China's finest intangible cultural heritages. In Suzhou, our master artisans continue this legacy—one needle, one thread, one story at a time.</p>
+        <h1 data-en-html="Rooted in Suzhou,<br>Stitched for the World" data-zh-html="扎根苏州，<br>绣制世界" data-ar-html="متجذرة في سوتشو،<br>مطرزة للعالم">Rooted in Suzhou,<br>Stitched for the World</h1>
+        <p data-en="For over 2,500 years, Suzhou embroidery has been revered as one of China's finest intangible cultural heritages. In Suzhou, our master artisans continue this legacy—one needle, one thread, one story at a time." data-zh="超过2500年来，苏州刺绣一直被誉为中国最精美的非物质文化遗产之一。在苏州，我们的大师级刺绣艺人延续着这一传承——一针一线，一个故事接着一个故事。" data-ar="لأكثر من 2500 عام، كان التطريز في سوتشو يُحتَرَم كواحد من أرقى التراث الثقافي غير المادي في الصين. في سوتشو، يستمر حرَفينُنا الأساتذة في هذه الشرَكة — إبرة واحدة، خيط واحد، قصة واحدة في المرة.">For over 2,500 years, Suzhou embroidery has been revered as one of China's finest intangible cultural heritages. In Suzhou, our master artisans continue this legacy—one needle, one thread, one story at a time.</p>
     </section>
-    
+
     <!-- 绣娘肖像区 -->
     <section class="page-container artisan-section">
-        <div class="artisan-image"></div>
+        <div class="artisan-image">
+                <img class="artisan-img" src="苏绣过程.jpeg" alt="Suzhou Embroidery Process">
+            </div>
         <div class="artisan-text">
-            <h2 data-en="The Hands Behind the Art" data-zh="艺术背后的手">The Hands Behind the Art</h2>
-            <p data-en="Every SIY artwork is hand-stitched by a certified Suzhou embroidery master. Most have dedicated 20+ years to perfecting their craft. No machines. No shortcuts." data-zh="每一件SIY作品都由认证的苏州刺绣大师手工绣制。大多数人已经投入20多年完善他们的技艺。没有机器。没有捷径。">Every SIY artwork is hand-stitched by a certified Suzhou embroidery master. Most have dedicated 20+ years to perfecting their craft. No machines. No shortcuts.</p>
+            <h2 data-en="The Hands Behind the Art" data-zh="艺术背后的手" data-ar="الأيدي وراء الفن">The Hands Behind the Art</h2>
+            <p data-en="Every SIY artwork is hand-stitched by a certified Suzhou embroidery master. Most have dedicated 20+ years to perfecting their craft. No machines. No shortcuts." data-zh="每一件SIY作品都由认证的苏州刺绣大师手工绣制。大多数人已经投入20多年完善他们的技艺。没有机器。没有捷径。" data-ar="كل عمل فني من SIY مطرز يدوياً على يد أستاذ مُعتمَد للتطريز في سوتشو. معظمهم كرسوا أكثر من 20 عاماً لإتقان حرفتهم. لا آلات. لا اختصارات.">Every SIY artwork is hand-stitched by a certified Suzhou embroidery master. Most have dedicated 20+ years to perfecting their craft. No machines. No shortcuts.</p>
         </div>
     </section>
-    
+
     <!-- 工艺说明 -->
     <section class="craft-section">
         <div class="page-container">
-            <h2 data-en="The Craft" data-zh="工艺">The Craft</h2>
-            <p data-en="100% mulberry silk threads. Naturally derived dyes. Up to 40 hours of meticulous hand-stitching per piece." data-zh="100%桑蚕丝线。天然染料。每件作品精心手工刺绣长达40小时。">100% mulberry silk threads. Naturally derived dyes. Up to 40 hours of meticulous hand-stitching per piece.</p>
-            <p data-en="Our work bridges centuries-old Suzhou techniques with contemporary global aesthetics—creating heirloom art for modern living." data-zh="我们的作品连接了几个世纪前的苏州技艺与当代全球美学——为现代生活创造传世艺术。">Our work bridges centuries-old Suzhou techniques with contemporary global aesthetics—creating heirloom art for modern living.</p>
+            <h2 data-en="The Craft" data-zh="工艺" data-ar="الحرفة">The Craft</h2>
+            <p data-en="100% mulberry silk threads. Naturally derived dyes. Up to 40 hours of meticulous hand-stitching per piece." data-zh="100%桑蚕丝线。天然染料。每件作品精心手工刺绣长达40小时。" data-ar="خيوط حرير التوت 100%. أصباغ مستخلصة طبيعياً. حتى 40 ساعة من التطريز اليدوي الدقيق لكل قطعة.">100% mulberry silk threads. Naturally derived dyes. Up to 40 hours of meticulous hand-stitching per piece.</p>
+            <p data-en="Our work bridges centuries-old Suzhou techniques with contemporary global aesthetics—creating heirloom art for modern living." data-zh="我们的作品连接了几个世纪前的苏州技艺与当代全球美学——为现代生活创造传世艺术。" data-ar="تربط أعمالنا تقنيات سوتشو التي تعود لقرون مع الجماليات العالمية المعاصرة — خلق فن يورث للأجيال في العيش الحديث.">Our work bridges centuries-old Suzhou techniques with contemporary global aesthetics—creating heirloom art for modern living.</p>
         </div>
     </section>
-    
+
     <!-- 页脚 -->
     <footer class="footer page-container">
-        <div data-en="© 2026 SIY. All rights reserved." data-zh="© 2026 SIY。保留所有权利。">© 2026 SIY. All rights reserved.</div>
+        <div data-en="© 2026 SIY. All rights reserved." data-zh="© 2026 SIY。保留所有权利。" data-ar="© 2026 SIY. جميع الحقوق محفوظة.">© 2026 SIY. All rights reserved.</div>
         <div class="footer-center">
-            <a href="#" data-en="IG" data-zh="IG">IG</a>
-            <a href="#" data-en="Pinterest" data-zh="Pinterest">Pinterest</a>
+            <a href="#" data-en="IG" data-zh="IG" data-ar="انستغرام">IG</a>
+            <a href="#" data-en="Pinterest" data-zh="Pinterest" data-ar="بينتيرست">Pinterest</a>
         </div>
-        <div data-en="Suzhou, China" data-zh="中国苏州">Suzhou, China</div>
+        <div data-en="Suzhou, China" data-zh="中国苏州" data-ar="سوتشو، الصين">Suzhou, China</div>
     </footer>
+
 </body>
 </html>
